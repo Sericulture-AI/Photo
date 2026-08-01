@@ -133,6 +133,31 @@ body{font-family:'Inter',sans-serif;background:#e5e7eb;background-image:radial-g
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#0b1c40;color:#fffaf3;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;border:1px solid rgba(181,135,46,.4);box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .3s ease;z-index:300;pointer-events:none;}
 .toast.show{transform:translateX(-50%) translateY(0);}
+
+/* ===== MOBILE / RESPONSIVE (additive only) ===== */
+@media (max-width:820px){
+  html,body{overflow:auto;height:auto;min-height:100%;}
+  .toolbar{height:auto;flex-wrap:wrap;justify-content:center;gap:12px;padding:12px 14px;}
+  .toolbar>div{flex:1 1 100%;justify-content:center;flex-wrap:wrap;}
+  .divider-v{display:none;}
+  .controls,.actions{width:100%;justify-content:center;flex-wrap:wrap;padding:6px 12px;}
+  .workspace{flex:none;width:100%;height:auto;min-height:70vh;}
+}
+@media (max-width:480px){
+  .brand-text h1{font-size:18px;}
+  .brand-text p{font-size:9px;letter-spacing:.14em;}
+  .logo-pill img{height:28px;}
+  .ctrl-label{font-size:12px;}
+  .ctrl-select{padding:5px 8px;font-size:12px;}
+  .btn{padding:8px 12px;font-size:12px;}
+  .workspace{min-height:62vh;}
+}
+/* Touch devices have no :hover, so keep slot actions tappable */
+@media (hover:none){
+  .slot-hover{opacity:1;background:transparent;align-items:flex-start;justify-content:flex-end;padding:6px;gap:6px;}
+  .slot-btn{width:34px;height:34px;box-shadow:0 2px 8px rgba(0,0,0,.45);}
+  .slot-btn svg{width:16px;height:16px;}
+}
 </style>
 </head>
 <body>
